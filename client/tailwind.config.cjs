@@ -7,8 +7,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        Quicksand: "Quicksand, sans-serif",
+        Quicksand: ["Quicksand, sans-serif"],
+        Lato: ["Lato", "sans-serif"],
       },
+
       colors: {
         "black-01": "#253D4E",
         "gray-01": "#939393",
@@ -27,6 +29,15 @@ module.exports = {
 
       screens: {
         xs: "375px",
+      },
+
+      backgroundImage: {
+        "hero-pattern": "url('./src/assets/Banner/BGImage.png')",
+      },
+
+      fontSize: {
+        heading: "56px",
+        "heading-2": "42px",
       },
     },
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Instagram, Twitter, Whatsapp, YouTube } from "../../commons/Icons";
+import { Facebook, Instagram, Twitter, Whatsapp, YouTube } from "../../commons/Icons/Icons";
 
 const SocialNetworks = () => {
   const networkIcons = [

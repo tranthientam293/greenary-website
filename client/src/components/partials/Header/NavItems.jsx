@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Calling,
   CandyMenu,
@@ -8,21 +9,22 @@ import {
   Twitter,
   Whatsapp,
   YouTube,
-} from "../../commons/Icons";
+} from "../../commons/Icons/Icons";
 
-const NavLinks = () => {
-  const links = ["home", "about", "shop", "blog", "our team", "contact"];
+const NavLinks = (props) => {
+  const links = ["home", "about", "shop", "blog", "team", "contact"];
   return (
     <ul className="flex flex-col sm:flex-row items-center font-Quicksand font-bold text-black-01 gap-2">
       {links.map((link, index) => {
         return (
-          <li className="" key={index}>
-            <a
-              href=""
-              className="block p-2 sm:px-2 sm:py-0 hover:text-green-01 capitalize"
+          <li className="py-2" key={index}>
+            <Link
+              to={`/${link === "home" ? "" : link}`}
+              className="block px-2 sm:px-2 sm:py-0 hover:text-green-01 capitalize"
+              onClick={props.handler}
             >
-              {link}
-            </a>
+              {link === "team" ? "our team" : link}
+            </Link>
           </li>
         );
       })}
@@ -32,7 +34,7 @@ const NavLinks = () => {
 
 const BrowseBtn = () => {
   return (
-    <button className="hidden lg:flex items-center gap-3 font-Quicksand font-bold text-white bg-green-01 p-3 rounded candy-menu">
+    <button className="hidden lg:flex items-center gap-3 font-Quicksand font-bold text-white bg-green-01 p-2 rounded candy-menu">
       <CandyMenu />
       <span className="capitalize">browse all categories</span>
       <ChevronDown />
@@ -76,11 +78,11 @@ const NavItems = (props) => {
     <>
       <div
         className={`container-custom ${
-          props.isOpened ? "flex" : "hidden sm:flex"
-        } items-center justify-between gap-2 py-4`}
+          props.isOpened ? "flex" : "hidden"
+        } sm:flex items-center justify-between gap-2 py-4`}
       >
         <BrowseBtn />
-        <NavLinks />
+        <NavLinks handler={props.toggler} />
         <NetWorks />
       </div>
       <div className="bottom-line"></div>

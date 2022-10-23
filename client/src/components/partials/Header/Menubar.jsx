@@ -1,6 +1,7 @@
 import React from "react";
 import NavBrand from "../../commons/Navbrand/NavBrand";
-import { Account, Cart, Heart, Place, Search } from "../../commons/Icons";
+import { Account, Cart, Heart, Place, Search } from "../../commons/Icons/Icons";
+import { Link } from "react-router-dom";
 
 const SearchForm = () => {
   const categories = [
@@ -80,14 +81,14 @@ const UserFeatures = (props) => {
     <div className="flex items-center gap-4 lg:gap-3">
       {userFeatures.map((item, index) => {
         return (
-          <a
+          <Link
             key={index}
-            href=""
+            to={`/${item.text}`}
             className="flex items-center gap-2 text-base text-black-01"
           >
             {item.icon}
-            <span className="hidden lg:block text-gray-01">{item.text}</span>
-          </a>
+            <span className="hidden lg:block text-gray-01 capitalize">{item.text}</span>
+          </Link>
         );
       })}
 
@@ -106,7 +107,7 @@ const UserFeatures = (props) => {
 const Menubar = (props) => {
   return (
     <>
-      <div className=" container-custom flex items-center justify-between gap-2 py-2 mb-5 relative">
+      <div className=" container-custom flex items-center justify-between gap-2 py-2  relative">
         <NavBrand />
         <SearchForm />
         <Locator />

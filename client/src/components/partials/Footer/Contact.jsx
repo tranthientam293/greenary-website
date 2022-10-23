@@ -1,5 +1,5 @@
 import React from "react";
-import { Calling, Mail, Place, TimeCircle } from "../../commons/Icons";
+import { Calling, Mail, Place, TimeCircle } from "../../commons/Icons/Icons";
 
 const Contact = () => {
   const footerTexts = [

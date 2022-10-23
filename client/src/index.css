@@ -12,6 +12,9 @@
 }
 
 @layer components {
+  .heading-secondary {
+    @apply font-Quicksand font-semibold text-heading-2 leading-normal text-black-01;
+  }
   .container-custom {
     @apply max-w-default px-3 mx-auto;
   }
@@ -27,5 +30,31 @@
 
   .bottom-line {
     @apply w-screen h-[0.1px] xs:h-[0.5px] bg-gray-01;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .sale::before {
+    @apply content-["Sale"] absolute top-[10px] -left-[120px] text-base text-white bg-blue-01 py-3 px-40 -rotate-45 z-10;
+  }
+
+  .new::before {
+    @apply content-["New"] absolute top-[10px] -left-[120px] text-base text-white bg-green-01 py-3 px-40 -rotate-45 z-10;
+  }
+
+  .hot::before {
+    @apply content-["Hot"] absolute top-[10px] -left-[120px] text-base text-white bg-pink-01 py-3 px-40 -rotate-45 z-10;
+  }
+
+  .tab-active {
+    box-shadow: 0px 23px 18px rgba(9, 30, 66, 0.08),
+      0px 0px 1px rgba(9, 30, 66, 0.31);
   }
 }
