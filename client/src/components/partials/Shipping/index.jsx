@@ -1,18 +1,21 @@
 import React from "react";
 import { Form } from "react-router-dom";
 import shipping from "./img/Shipping.png";
+import background from "./img/BGImage.png";
 
 const Shipping = () => {
   return (
     <section className="mt-[100px]">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 container-custom bg-hero-pattern bg-cover bg-center p-12">
+      <div
+        className={`flex flex-col-reverse lg:flex-row items-center justify-between gap-12 container-custom hero-pattern bg-cover bg-center p-12`}
+      >
         <div>
           <div className="mb-8">
             <h2 className="font-Quicksand font-bold text-4xl lg:text-heading-2 leading-normal mb-6">
               Stay home & get your daily needs from our shop
             </h2>
             <p className="text-gray-01 text-lg">
-              Start Your Daily Shopping with{" "}
+              Start Your Daily Shopping with
               <span className="text-green-01">Greenery</span>
             </p>
           </div>

@@ -6,7 +6,7 @@ import peach from "../../../assets/Banner/peach.png";
 
 const Banner = () => {
   return (
-    <div className="w-full bg-hero-pattern bg-cover bg-center py-8">
+    <div className="w-full hero-pattern bg-cover bg-center py-8">
       <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-8 container-custom">
         <div className="relative w-full bg-blue-02 rounded-lg py-10 lg:py-20 lg:px-5">
           <div className="">

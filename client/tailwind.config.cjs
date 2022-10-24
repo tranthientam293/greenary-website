@@ -32,7 +32,7 @@ module.exports = {
       },
 
       backgroundImage: {
-        "hero-pattern": "url('./src/assets/Banner/BGImage.png')",
+        // "hero-pattern": 'url("./background.png")',
       },
 
       fontSize: {

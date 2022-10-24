@@ -6,7 +6,7 @@ import Shipping from "../components/partials/Shipping";
 const OurTeamView = () => {
   return (
     <>
-      <BreadCrumb title={'Contact Us'}/>
+      <BreadCrumb title={'Our Team'}/>
       <BestEmployee />
       <TeamMates />
       <Shipping />

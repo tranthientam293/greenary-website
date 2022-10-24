@@ -12,6 +12,9 @@
 }
 
 @layer components {
+  .heading-primary {
+    @apply font-Quicksand font-bold text-heading leading-normal text-black-01;
+  }
   .heading-secondary {
     @apply font-Quicksand font-semibold text-heading-2 leading-normal text-black-01;
   }
@@ -56,5 +59,14 @@
   .tab-active {
     box-shadow: 0px 23px 18px rgba(9, 30, 66, 0.08),
       0px 0px 1px rgba(9, 30, 66, 0.31);
+  }
+
+  .about {
+    box-shadow: 0px 9px 15px rgba(9, 30, 66, 0.08),
+      0px 0px 1px rgba(9, 30, 66, 0.31);
+  }
+
+  .hero-pattern {
+    background-image: url("../public/background.png");
   }
 }
