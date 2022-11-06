@@ -21,21 +21,21 @@ const WelcomeSection = () => {
       </div>
 
       <div className="md:basis-1/2">
-        <h2 className="heading-secondary mb-6">
+        <h2 className="mb-6">
           Welcome to <span className="text-green-01">Greenery</span>
         </h2>
-        <p className="text-gray-01 text-justify mb-3">
+        <p className="para-1 text-justify mb-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <p className="text-gray-01 text-justify mb-3">
+        <p className="para-1 text-justify mb-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate id est laborum.
         </p>
-        <p className="text-gray-01 text-justify mb-3">
+        <p className="para-1 text-justify mb-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -68,7 +68,7 @@ const ProvideSection = () => {
         What We <span className="text-green-01">Provide</span>?
       </h2>
 
-      <div className="grid grid-cols-3 gap-[30px]">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
         {provisions.map((item, index) => {
           return <ProvideCard key={index} {...item} />;
         })}
@@ -97,12 +97,12 @@ const Achivement = () => {
     },
   ];
   return (
-    <div className="flex hero-pattern bg-cover bg-center about rounded-xl p-16 mt-[100px]">
+    <div className="flex background-vegetable shadow-03 rounded-xl p-16 mt-[100px]">
       {contents.map((content, index) => {
         return (
           <div className="basis-1/4 text-center" key={index}>
-            <h1 className="heading-primary ">{content.title}</h1>
-            <p className="text-green-01 font-semibold">{content.text}</p>
+            <h1>{content.title}</h1>
+            <p className="text-green-01 para-1 font-semibold">{content.text}</p>
           </div>
         );
       })}

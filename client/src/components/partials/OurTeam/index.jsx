@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import bestEmployee from "./img/person-01.png";
-import teamMate01 from "./img/person-02.png";
-import teamMate02 from "./img/person-03.png";
-import teamMate03 from "./img/person-04.png";
-import teamMate04 from "./img/person-05.png";
-import teamMate05 from "./img/person-06.png";
-import teamMate06 from "./img/person-07.png";
-import teamMate07 from "./img/person-08.png";
-import teamMate08 from "./img/person-09.png";
+import bestEmployee from "/person-01.png";
+import teamMate01 from "/person-02.png";
+import teamMate02 from "/person-03.png";
+import teamMate03 from "/person-04.png";
+import teamMate04 from "/person-05.png";
+import teamMate05 from "/person-06.png";
+import teamMate06 from "/person-07.png";
+import teamMate07 from "/person-08.png";
+import teamMate08 from "/person-09.png";
 
 const teamMates = [
   { image: teamMate01, background: "green-02" },
@@ -32,18 +32,18 @@ const BestEmployee = () => {
                 Best Employee of{" "}
                 <span className="text-green-01">the Month</span>
               </h2>
-              <p className="text-gray-01 mb-3 text-justify">
+              <p className="para-1 mb-3 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
-              <p className="text-gray-01 mb-3 text-justify">
+              <p className="para-1 mb-3 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                 in reprehenderit in voluptate id est laborum.
               </p>
-              <p className="text-gray-01 mb-3 text-justify">
+              <p className="para-1 mb-3 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -51,9 +51,7 @@ const BestEmployee = () => {
                 in reprehenderit in voluptate id est laborum.
               </p>
 
-              <Link className="block w-fit font-Quicksand font-bold text-white candy-menu rounded px-5 py-3 mt-3">
-                Learn More
-              </Link>
+              <Link className="btn btn-primary w-fit mt-3">Learn More</Link>
             </div>
 
             <div className="bg-blue-02">
@@ -70,10 +68,10 @@ const TeamMates = () => {
   return (
     <section>
       <div className="mx-auto max-w-[500px] text-center mb-10">
-        <h2 className="font-Quicksand font-bold text-heading-2 leading-normal text-black-01 mb-6">
+        <h2 className="mb-6">
           Our <span className="text-green-01">Team</span>
         </h2>
-        <p className="text-gray-01">
+        <p className="para-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
         </p>
@@ -82,7 +80,7 @@ const TeamMates = () => {
         {teamMates.map((teamMate, index) => {
           return (
             <div className={`bg-${teamMate.background} rounded-lg`} key={index}>
-              <img src={teamMate.image} alt="" className="" />
+              <img src={teamMate.image} alt="teammate" className="" />
             </div>
           );
         })}

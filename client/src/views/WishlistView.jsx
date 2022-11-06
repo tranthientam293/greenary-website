@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
 const WishlistView = () => {
-  return (
-    <div>WishlistView</div>
-  )
-}
+  return <div className="container-custom mt-[200px]">WishlistView</div>;
+};
 
-export default WishlistView
+export default WishlistView;

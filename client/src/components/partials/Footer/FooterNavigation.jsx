@@ -8,7 +8,7 @@ const FooterNavigation = (props) => {
         {props.content.map((item, index) => {
           return (
             <li key={index} className="mb-6">
-              <a href="" className="text-base text-gray-01 capitalize">
+              <a href="" className="text-gray-01 capitalize">
                 {item}
               </a>
             </li>

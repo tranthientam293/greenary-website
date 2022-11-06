@@ -9,14 +9,15 @@ import SetsIcon, {
   SweetsIcon,
   VegetableIcon,
 } from "../../commons/Icons/TabIcons";
+
 import SectionHeader from "../../commons/SectionHeader/SectionHeader";
 import Tabs from "./Tabs";
-import orange from "./img/bg-01.png";
-import fruits from "./img/bg-02.png";
-import strawberry from "./img/bg-03.png";
+import orange from "/bg-01.png";
+import fruits from "/bg-02.png";
+import strawberry from "/bg-03.png";
 
-const ProductNavTab = () => {
-  const tabs = [
+const ProductNavTab = (props) => {
+  const tabs = props.tabs || [
     {
       icon: <SetsIcon />,
       name: "sets",
@@ -77,7 +78,7 @@ const ProductNavTab = () => {
   return (
     <section className="mt-[100px]">
       <div className="container-custom">
-        <SectionHeader text={"Shop by Categories"} />
+        {props.title && <SectionHeader text={props.title} />}
 
         <div className="flex justify-between grow-0 gap-2 overflow-x-scroll mb-[100px]">
           {tabs.map((tab, index) => {
