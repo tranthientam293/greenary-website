@@ -19,7 +19,7 @@ const footerLinks = {
 const Footer = () => {
   return (
     <footer className="bg-white">
-      <div className="flex flex-wrap max-w-[1170px] mx-auto px-2 py-[60px]">
+      <div className="flex flex-wrap container-custom mx-auto py-[60px]">
         <div className="basis-full md:basis-1/3">
           <NavBrand />
           <SocialNetworks />

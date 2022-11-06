@@ -27,7 +27,7 @@ const Contact = () => {
         {footerTexts.map((item, index) => {
           return (
             <li key={index} className="mb-6">
-              <a href="" className="flex items-center gap-1 text-green-01">
+              <a href="" className="flex items-center gap-1 text-green-01 text-sm">
                 {item.icon}
                 <span className="text-black-01">{item.content}</span>
               </a>

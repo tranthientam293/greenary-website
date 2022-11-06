@@ -2,23 +2,23 @@ import React from "react";
 import { BlogCard } from "../../commons/Card/Card";
 import SectionHeader from "../../commons/SectionHeader/SectionHeader";
 
-import thumbnail01 from "../../partials/Blog/img/blog-01.png";
-import thumbnail02 from "../../partials/Blog/img/blog-02.png";
-import thumbnail03 from "../../partials/Blog/img/blog-03.png";
-import thumbnail04 from "../../partials/Blog/img/blog-04.png";
-import thumbnail05 from "../../partials/Blog/img/blog-05.png";
-import thumbnail06 from "../../partials/Blog/img/blog-06.png";
-import thumbnail07 from "../../partials/Blog/img/blog-07.png";
-import thumbnail08 from "../../partials/Blog/img/blog-08.png";
-import thumbnail09 from "../../partials/Blog/img/blog-09.png";
-import thumbnail10 from "../../partials/Blog/img/blog-10.png";
-import thumbnail11 from "../../partials/Blog/img/blog-11.png";
-import thumbnail12 from "../../partials/Blog/img/blog-12.png";
+import thumbnail01 from "/blog-01.png";
+import thumbnail02 from "/blog-02.png";
+import thumbnail03 from "/blog-03.png";
+import thumbnail04 from "/blog-04.png";
+import thumbnail05 from "/blog-05.png";
+import thumbnail06 from "/blog-06.png";
+import thumbnail07 from "/blog-07.png";
+import thumbnail08 from "/blog-08.png";
+import thumbnail09 from "/blog-09.png";
+import thumbnail10 from "/blog-10.png";
+import thumbnail11 from "/blog-11.png";
+import thumbnail12 from "/blog-12.png";
 
-import avatar01 from "../../partials/Blog/img/User-1.png";
-import avatar02 from "../../partials/Blog/img/User-2.png";
-import avatar03 from "../../partials/Blog/img/User-3.png";
-import avatar04 from "../../partials/Blog/img/User-4.png";
+import avatar01 from "/User-1.png";
+import avatar02 from "/User-2.png";
+import avatar03 from "/User-3.png";
+import avatar04 from "/User-4.png";
 
 const Blog = () => {
   const articles = [
@@ -138,10 +138,9 @@ const Blog = () => {
         <SectionHeader text={"Recipe Articles"} />
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-[30px]">
-          {articles.map((item,index)=>{
-            return <BlogCard {...item} key={index}/>;
+          {articles.map((item, index) => {
+            return <BlogCard {...item} key={index} />;
           })}
-          
         </div>
       </div>
     </section>
