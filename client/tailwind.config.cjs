@@ -31,10 +31,6 @@ module.exports = {
         xs: "375px",
       },
 
-      backgroundImage: {
-        // "hero-pattern": 'url("./background.png")',
-      },
-
       fontSize: {
         heading: "56px",
         "heading-2": "42px",

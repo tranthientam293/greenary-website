@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import React, { useState } from "react";
+import { useEffect } from "react";
+>>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
 import { Link } from "react-router-dom";
 import {
   Calling,
@@ -11,12 +16,23 @@ import {
 } from "../../commons/Icons/Icons";
 
 const NavLinks = (props) => {
+  
+
   const links = ["home", "about", "shop", "blog", "team", "contact"];
   return (
     <ul className="flex flex-col sm:flex-row items-center font-Quicksand font-bold text-black-01 gap-2">
       {links.map((link, index) => {
         return (
+<<<<<<< HEAD
           <li className="py-2" key={index} id={link}>
+=======
+          <li
+            className={link === "home" ? "choose py-2 active" : "choose py-2"}
+            key={index}
+            id={link}
+           
+          >
+>>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
             <Link
               to={`/${link === "home" ? "" : link}`}
               className={

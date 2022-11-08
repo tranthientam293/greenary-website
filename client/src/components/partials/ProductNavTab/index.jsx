@@ -9,11 +9,12 @@ import SetsIcon, {
   SweetsIcon,
   VegetableIcon,
 } from "../../commons/Icons/TabIcons";
+
 import SectionHeader from "../../commons/SectionHeader/SectionHeader";
 import Tabs from "./Tabs";
-import orange from "./img/bg-01.png";
-import fruits from "./img/bg-02.png";
-import strawberry from "./img/bg-03.png";
+import orange from "/bg-01.png";
+import fruits from "/bg-02.png";
+import strawberry from "/bg-03.png";
 
 const ProductNavTab = (props) => {
   const tabs = props.tabs || [

@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<< HEAD
 import { Form, Link } from "react-router-dom";
 import shipping from "./img/Shipping.png";
+=======
+import {  Link } from "react-router-dom";
+import shipping from "/Shipping.png";
+>>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
 
 const Shipping = () => {
   return (
