@@ -6,67 +6,106 @@
 
 @layer base {
   html {
-    font-family: "Lato", sans-serif;
-    font-size: 14px;
+    @apply font-Lato;
+  }
+
+  h1 {
+    @apply font-Quicksand font-bold text-4xl lg:text-[56px] leading-normal text-black-01;
+  }
+  h2 {
+    @apply font-Quicksand font-semibold text-4xl lg:text-[42px] leading-normal text-black-01;
+  }
+  h3 {
+    @apply font-Quicksand font-bold text-[32px] leading-normal text-black-01;
+  }
+  h4 {
+    @apply font-Quicksand font-bold text-xl text-black-01;
+  }
+  h5 {
+    @apply font-Quicksand font-bold text-sm text-black-01;
+  }
+
+  input {
+    @apply text-sm text-gray-01 rounded px-6 py-3 focus:outline-none;
+  }
+  p {
+    @apply text-gray-01;
+  }
+
+  th {
+    @apply font-Quicksand font-bold text-xl text-black-01 px-5 py-3 border-b-[1px] border-gray-01;
+  }
+
+  tr > th,
+  td {
+    @apply px-5 py-6 border-b-[1px] border-gray-01 border-dashed;
+  }
+  li {
+    list-style-type: none;
   }
 }
 
 @layer components {
-  .heading-primary {
-    @apply font-Quicksand font-bold text-heading leading-normal text-black-01;
-  }
-  .heading-secondary {
-    @apply font-Quicksand font-semibold text-heading-2 leading-normal text-black-01;
-  }
   .container-custom {
     @apply max-w-default px-3 mx-auto;
-  }
-
-  .location-box {
-    box-shadow: 0px 3px 12px rgba(9, 30, 66, 0.15),
-      0px 0px 1px rgba(9, 30, 66, 0.31);
-  }
-
-  .candy-menu {
-    background-image: linear-gradient(315deg, #19c179 -0.12%, #4fe58a 99.88%);
   }
 
   .bottom-line {
     @apply w-screen h-[0.1px] xs:h-[0.5px] bg-gray-01;
   }
 
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
   .sale::before {
-    @apply content-["Sale"] absolute top-[10px] -left-[120px] text-base text-white bg-blue-01 py-3 px-40 -rotate-45 z-10;
+    @apply content-["Sale"] absolute top-[10px] -left-[120px] text-white bg-blue-01 py-3 px-40 -rotate-45 z-10;
   }
 
   .new::before {
-    @apply content-["New"] absolute top-[10px] -left-[120px] text-base text-white bg-green-01 py-3 px-40 -rotate-45 z-10;
+    @apply content-["New"] absolute top-[10px] -left-[120px] text-white bg-green-01 py-3 px-40 -rotate-45 z-10;
   }
 
   .hot::before {
-    @apply content-["Hot"] absolute top-[10px] -left-[120px] text-base text-white bg-pink-01 py-3 px-40 -rotate-45 z-10;
+    @apply content-["Hot"] absolute top-[10px] -left-[120px] text-white bg-pink-01 py-3 px-40 -rotate-45 z-10;
   }
 
-  .tab-active {
+  .shadow-01 {
     box-shadow: 0px 23px 18px rgba(9, 30, 66, 0.08),
       0px 0px 1px rgba(9, 30, 66, 0.31);
   }
-
-  .about {
+  .shadow-02 {
+    box-shadow: 0px 3px 12px rgba(9, 30, 66, 0.15),
+      0px 0px 1px rgba(9, 30, 66, 0.31);
+  }
+  .shadow-03 {
     box-shadow: 0px 9px 15px rgba(9, 30, 66, 0.08),
       0px 0px 1px rgba(9, 30, 66, 0.31);
   }
 
-  .hero-pattern {
-    background-image: url("../public/background.png");
+  .background-vegetable {
+    background-image: url("/background.png");
+    @apply bg-cover bg-center;
+  }
+
+  .para-3 {
+    @apply text-lg;
+  }
+
+  .para-1 {
+    @apply text-sm;
+  }
+
+  .btn {
+    @apply flex items-center justify-center gap-3 font-Quicksand font-bold text-sm px-5 py-3 rounded hover:scale-105 ease-in transition-all;
+  }
+
+  .btn-primary {
+    @apply text-white hover:scale-105;
+    background-image: linear-gradient(315deg, #19c179 -0.12%, #4fe58a 99.88%);
+  }
+
+  .btn-secondary {
+    @apply text-green-01 bg-green-02 hover:bg-green-01 hover:text-white;
+  }
+
+  .active {
+    @apply text-green-01;
   }
 }

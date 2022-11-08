@@ -50,8 +50,8 @@ const ContactUs = () => {
   return (
     <section>
       <div className="container-custom ">
-        <div className="font-Quicksand font-bold mb-[100px]">
-          <h2 className="font-semibold text-heading-2 leading-normal text-center text-black-01 mb-10">
+        <div className="mb-[100px]">
+          <h2 className="text-center mb-10">
             Let us know <br></br>
             <span className="text-green-01">how we can help you</span>
           </h2>
@@ -61,9 +61,7 @@ const ContactUs = () => {
                 <div className=" text-4xl" key={index}>
                   <h3 className={`${item.color} mb-3`}>0{item.id}.</h3>
                   <h3 className="mb-3">{item.title}</h3>
-                  <p className="font-Lato font-normal text-sm text-gray-01 text-justfy">
-                    {item.content}
-                  </p>
+                  <p className="para-1 text-justfy">{item.content}</p>
                 </div>
               );
             })}
@@ -77,19 +75,19 @@ const ContactUs = () => {
                 <h3 className="font-Quicksand font-bold text-4xl text-black-01 mb-5">
                   {item.title}
                 </h3>
-                <p className="flex items-center gap-3 text-gray-01 mb-3">
+                <p className="flex items-center gap-3 para-1 mb-3">
                   <span className="text-green-01">
                     <Calling />
                   </span>
                   {item.phone}
                 </p>
-                <p className="flex items-center gap-3 text-gray-01 mb-3">
+                <p className="flex items-center gap-3 para-1 mb-3">
                   <span className="text-green-01">
                     <Place />
                   </span>
                   {item.address}
                 </p>
-                <p className="flex items-center gap-3 text-gray-01 mb-3">
+                <p className="flex items-center gap-3 para-1 mb-3">
                   <span className="text-green-01">
                     <Mail />
                   </span>
@@ -102,8 +100,8 @@ const ContactUs = () => {
 
         <Form>
           <div className="mb-10">
-            <h2 className="heading-secondary">Drop Us a Line</h2>
-            <p className="text-gray-01">
+            <h2>Drop Us a Line</h2>
+            <p className="para-1">
               Your email address will not be published. Required fields are
               marked
             </p>
@@ -113,22 +111,22 @@ const ContactUs = () => {
             <input
               type="text"
               placeholder="Name"
-              className="sm:col-span-2 border-solid border-[0.5px] border-green-01 px-6 py-3 rounded  focus:outline-none"
+              className="sm:col-span-2 border-[0.5px] border-green-01"
             />
             <input
               type="text"
               placeholder="Phone"
-              className="border-solid border-[0.5px] border-green-01 px-6 py-3 rounded focus:outline-none"
+              className="border-[0.5px] border-green-01"
             />
             <input
               type="text"
               placeholder="Email"
-              className="border-solid border-[0.5px] border-green-01 px-6 py-3 rounded focus:outline-none"
+              className="border-[0.5px] border-green-01"
             />
             <input
               type="text"
               placeholder="Write your comment"
-              className="sm:col-span-2 border-solid border-[0.5px] border-green-01 px-6 py-3 text-ellipsis rounded focus:outline-none"
+              className="sm:col-span-2 border-[0.5px] border-green-01"
             />
             <div className="flex items-center gap-3 mb-[30px]">
               <input
@@ -141,7 +139,7 @@ const ContactUs = () => {
               </label>
             </div>
           </div>
-          <button className="font-Quicksand text-white candy-menu rounded px-5 py-3">
+          <button className="btn btn-primary">
             Send message
           </button>
         </Form>

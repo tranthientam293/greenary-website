@@ -12,9 +12,15 @@ import AboutView from "./views/AboutView";
 import BlogView from "./views/BlogView";
 import OurTeamView from "./views/OurTeamView";
 import WishlistView from "./views/WishlistView";
-import AccountView from "./views/AccountView";
 import CartView from "./views/CartView";
 import ContactView from "./views/ContactView";
+import AuthLayout from "./layouts/AuthLayout";
+import LogIn from "./components/partials/Authentication/LogIn";
+import SignUp from "./components/partials/Authentication/SignUp";
+import ProductView from "./views/ProductView";
+import AccountView from "./views/AccountView";
+import { AuthProvider } from "./context/AuthContext";
+import { ShoppingCartProvider } from "./context/ShoppingContext";
 
 const router = createBrowserRouter([
   {
@@ -27,36 +33,55 @@ const router = createBrowserRouter([
         element: <HomeView />,
       },
       {
-        path: "/about/",
+        path: "about",
         element: <AboutView />,
       },
       {
-        path: "/shop",
+        path: "shop",
         element: <ShopView />,
       },
       {
-        path: "/blog",
+        path: "/shop/:productId",
+        element: <ProductView />,
+      },
+      {
+        path: "blog",
         element: <BlogView />,
       },
       {
-        path: "/team",
+        path: "team",
         element: <OurTeamView />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <ContactView />,
       },
       {
-        path: "/wishlist",
+        path: "wishlist",
         element: <WishlistView />,
       },
       {
-        path: "/cart",
+        path: "cart",
         element: <CartView />,
       },
       {
-        path: "/account",
+        path: "account",
         element: <AccountView />,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <AuthLayout />,
+    errorElement: <ErrorView />,
+    children: [
+      {
+        path: "login",
+        element: <LogIn />,
+      },
+      {
+        path: "signup",
+        element: <SignUp />,
       },
     ],
   },
@@ -64,6 +89,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ShoppingCartProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ShoppingCartProvider>
   </React.StrictMode>
 );

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   Calling,
@@ -17,10 +16,12 @@ const NavLinks = (props) => {
     <ul className="flex flex-col sm:flex-row items-center font-Quicksand font-bold text-black-01 gap-2">
       {links.map((link, index) => {
         return (
-          <li className="py-2" key={index}>
+          <li className="py-2" key={index} id={link}>
             <Link
               to={`/${link === "home" ? "" : link}`}
-              className="block px-2 sm:px-2 sm:py-0 hover:text-green-01 capitalize"
+              className={
+                "block text-sm px-2 sm:px-2 sm:py-0 hover:text-green-01 capitalize"
+              }
               onClick={props.handler}
             >
               {link === "team" ? "our team" : link}
@@ -34,7 +35,7 @@ const NavLinks = (props) => {
 
 const BrowseBtn = () => {
   return (
-    <button className="hidden lg:flex items-center gap-3 font-Quicksand font-bold text-white bg-green-01 p-2 rounded candy-menu">
+    <button className="hidden lg:btn btn-primary">
       <CandyMenu />
       <span className="capitalize">browse all categories</span>
       <ChevronDown />
@@ -52,7 +53,7 @@ const NetWorks = () => {
   ];
   return (
     <div className="flex items-center gap-5">
-      <div className="hidden md:flex items-center gap-2 text-black-01">
+      <div className="hidden md:flex items-center gap-3 text-black-01">
         {netWorks.map((network, index) => {
           return (
             <a href="" className="hover:text-green-01" key={index}>
@@ -65,8 +66,8 @@ const NetWorks = () => {
       <div className="hidden sm:flex items-center gap-2 text-black-01 border-solid border-l-[0.5px] border-l-gray-01 pl-3">
         <Calling />
         <div>
-          <p className="text-lg font-semibold">(406) 555-0120</p>
-          <p className=" text-[10px] text-gray-01">Mon - Fri: 9:00-20:00</p>
+          <p className="para-3 font-semibold">(406) 555-0120</p>
+          <p className=" text-[10px]">Mon - Fri: 9:00-20:00</p>
         </div>
       </div>
     </div>
@@ -79,7 +80,7 @@ const NavItems = (props) => {
       <div
         className={`container-custom ${
           props.isOpened ? "flex" : "hidden"
-        } sm:flex items-center justify-between gap-2 py-4`}
+        } sm:flex items-center justify-between gap-2 py-2`}
       >
         <BrowseBtn />
         <NavLinks handler={props.toggler} />
