@@ -1,53 +1,13 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
 import { useShoppingCartContext } from "../../../context/ShoppingContext";
 import { ChevronDown, ChevronUp, TrashBin } from "../Icons/Icons";
 import formatCurrency from "../../../ultilities/formatCurrency";
-import useAuthContext from "../../../context/AuthContext";
-=======
-import { useShoppingCartContext } from "../../../context/ShoppingContext";
-import { ChevronDown, ChevronUp, TrashBin } from "../Icons/Icons";
-import formatCurrency from "../../../ultilities/formatCurrency";
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
 
 const CartItem = (props) => {
   const { _id, quantity, imageUrl, title, price, promotion, category } =
     props.item;
-<<<<<<< HEAD
-  const { getUser } = useAuthContext();
-  const user = getUser();
-  const {
-    increaseProductQuantity,
-    decreaseProductQuantity,
-    removeFromCart,
-    cartItems,
-    setCartItems,
-  } = useShoppingCartContext();
 
-  // const [productQty, setProductQty] = useState(quantity);
-  // const { _id, quantity } = props.item;
-
-  //   const quantity = getProductQuantity(id);
-
-  // const { imageUrl, title, price, promotion, category } = props.products.find(
-  //   (product) => product.id === _id
-  // );
-
-  // const inreaseHandler = (_id) => {
-  //   console.log("click");
-  //   setCartItems((currCart) => {
-  //     currCart.map((cartItem) => {
-  //       if (cartItem._id == _id) {
-  //         return { ...cartItem, quantity: cartItem.quantity + 1 };
-  //       }
-  //       return cartItem;
-  //     });
-  //   });
-  // };
-=======
   const { increaseProductQuantity, decreaseProductQuantity, removeFromCart } =
     useShoppingCartContext();
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
 
   return (
     <div className="flex justify-between items-center px-5 py-6 border-dashed border-b-gray-01 border-b-[1px]">

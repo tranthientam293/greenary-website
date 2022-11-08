@@ -1,4 +1,4 @@
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Cart,
   EditIcon,
@@ -16,10 +16,6 @@ const AccountView = () => {
     sessionStorage.removeItem("auth");
     setCartItems([]);
     setLogged(false);
-<<<<<<< HEAD
-    return redirect("/");
-=======
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
   };
   return (
     <section>

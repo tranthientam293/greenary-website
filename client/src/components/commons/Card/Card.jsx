@@ -2,18 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useShoppingCartContext } from "../../../context/ShoppingContext";
 import formatCurrency from "../../../ultilities/formatCurrency";
-<<<<<<< HEAD
-import {
-  Cart,
-  FilledHeart,
-  Heart,
-  RightArrow,
-  StarRating,
-  ViewIcon,
-} from "../Icons/Icons";
-=======
+
 import { RightArrow, ViewIcon } from "../Icons/Icons";
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
+
 import Rating from "../Rating/Rating";
 
 const CardNavTab = ({ background, text }) => {
@@ -48,10 +39,6 @@ const Card = ({
 }) => {
   const { increaseProductQuantity } = useShoppingCartContext();
 
-<<<<<<< HEAD
- 
-=======
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
   return (
     <div
       className={
@@ -82,14 +69,8 @@ const Card = ({
               </span>
             </p>
           </div>
-<<<<<<< HEAD
-          <Link
-            to={`/shop/${_id}`}
-            className="btn btn-secondary"
-          >
-=======
+
           <Link to={`/shop/${_id}`} className="btn btn-secondary">
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
             <ViewIcon /> Detail
           </Link>
         </div>

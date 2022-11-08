@@ -1,23 +1,16 @@
 import axios from "axios";
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import useAuthContext from "../../../../context/AuthContext";
-import { useShoppingCartContext } from "../../../../context/ShoppingContext";
-=======
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuthContext from "../../../../context/AuthContext";
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
+
 import { LeftArrow } from "../../../commons/Icons/Icons";
 import NavBrand from "../../../commons/Navbrand/NavBrand";
 
 const LogIn = () => {
-<<<<<<< HEAD
-  const { logged, setLogged, auth, setAuth } = useAuthContext();
-=======
+
   const { logged, setLogged, setAuth } = useAuthContext();
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
+
 
   const [user, setUser] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -63,12 +56,7 @@ const LogIn = () => {
             <>
               <h3 className="flex flex-col sm:flex-row justify-center items-center gap-2 text-black-01">
                 Welcome to <NavBrand />
-<<<<<<< HEAD
-                {/* <span className="text-red-01">
-                  {JSON.parse(sessionStorage.getItem("auth")).username}
-                </span> */}
-=======
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
+
               </h3>
 
               <p className="para-3 text-black-01 text-center my-4">

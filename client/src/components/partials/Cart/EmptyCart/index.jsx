@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LeftArrow } from "../../../commons/Icons/Icons";
-<<<<<<< HEAD
-import Shipping from "../../Shipping";
-=======
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
+
 
 const EmptyCart = () => {
   return (

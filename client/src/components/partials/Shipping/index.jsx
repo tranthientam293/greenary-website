@@ -1,11 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
-import { Form, Link } from "react-router-dom";
-import shipping from "./img/Shipping.png";
-=======
-import {  Link } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import shipping from "/Shipping.png";
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
 
 const Shipping = () => {
   return (
@@ -23,9 +19,10 @@ const Shipping = () => {
               <span className="text-green-01"> Greenery</span>
             </p>
           </div>
-          
-            <Link to="/auth/signup" className="btn btn-primary w-full mx-auto">Sign Up now</Link>
-          
+
+          <Link to="/auth/signup" className="btn btn-primary w-full mx-auto">
+            Sign Up now
+          </Link>
         </div>
 
         <img src={shipping} alt="Shipping image" />

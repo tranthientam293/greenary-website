@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import { Form, Link, redirect } from "react-router-dom";
-=======
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
 import { LeftArrow } from "../../../commons/Icons/Icons";
 import axios from "axios";
 
@@ -39,10 +34,6 @@ const SignUp = () => {
         setErrMsg(respone.data);
       } else {
         SetIsSuccess(true);
-<<<<<<< HEAD
-        
-=======
->>>>>>> a8505f672081936549c121ed3cc1a5c9c3cc8a6e
       }
     } catch (err) {
       setErrMsg(err);

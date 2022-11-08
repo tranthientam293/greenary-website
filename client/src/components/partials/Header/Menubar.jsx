@@ -1,7 +1,7 @@
 import React from "react";
 import NavBrand from "../../commons/Navbrand/NavBrand";
 import { Account, Cart, Heart, Place, Search } from "../../commons/Icons/Icons";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useShoppingCartContext } from "../../../context/ShoppingContext";
 import useAuthContext from "../../../context/AuthContext";
 
@@ -92,12 +92,15 @@ const UserFeatures = (props) => {
       {userFeatures.map((item, index) => {
         return (
           <li className="choose" key={index}>
-            <Link
+            <NavLink
               to={logged ? item.loggedPath : item.path}
-              className="relavtive flex items-center gap-2 text-base text-black-01 group hover:text-green-01"
+              className={({ isActive }) => {
+                const activeClass = isActive ? "text-green-01" : "";
+                return `relavtive flex items-center gap-2 text-base text-black-01 group hover:text-green-01 ${activeClass}`;
+              }}
             >
               {item.icon}
-              <span className="hidden xl:block text-gray-01 text-sm capitalize group-hover:text-green-01">
+              <span className="hidden xl:block text-gray-01 text-sm text-inherit capitalize group-hover:text-green-01">
                 {item.text}
               </span>
 
@@ -108,7 +111,7 @@ const UserFeatures = (props) => {
               ) : (
                 ""
               )}
-            </Link>
+            </NavLink>
           </li>
         );
       })}
