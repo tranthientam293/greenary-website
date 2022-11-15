@@ -1,18 +1,23 @@
 const Product = require("../models/Product");
 
 const getAllProducts = async (req, res) => {
-  const products = await Product.find({});
+  const products = await Product.find({}).limit(10).sort({ rating: -1 });
   res.json({ products });
 };
 
-const getAProductById = async function (req, res) {
+const getProductById = async function (req, res) {
   const product = await Product.findById(req.params.productId);
   res.json({ product });
 };
 
 const addProduct = async function (req, res) {
-  const product = await Product.create(req.body);
-  res.json({ message: "product is created!" });
+  try {
+    const slug = req.body.title.toLowerCase().split(" ").join("-");
+    const product = await Product.create({ ...req.body, slug });
+    res.status(201).json({ message: "product is created!", product });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
 
 const updateProductById = async function (req, res) {
@@ -22,29 +27,42 @@ const updateProductById = async function (req, res) {
       { $set: req.body },
       { new: true }
     );
+
+    res.status(200).json({ message: "update succesfully", updatedProduct });
   } catch (err) {
     res.status(500).json(err);
   }
 };
 
-const getProductsByCondition = async function (req, res) {
+const productFilter = async function (req, res) {
   try {
-    const condition = req.body;
-    const result = [];
-    for (let el of condition) {
-      const product = await Product.findById(el);
-      result.push({ ...product, quanitity: el.quanitity });
+    const products = await Product.find(req.body);
+    if (!products.length) {
+      return res.status(200).json({ message: "No product found" });
     }
-    res.json({ result });
+    res.status(200).json({ products });
   } catch (err) {
-    res.json(err);
+    res.status(500).json(err);
+  }
+};
+
+const deleteProduct = async function (req, res) {
+  try {
+    const product = await Product.findByIdAndDelete(req.body.productId);
+    if (!product) {
+      return res.status(200).json({ message: "No product found" });
+    }
+    res.status(200).json({ message: "Product is deleted" });
+  } catch (err) {
+    res.status(500), json(err);
   }
 };
 
 module.exports = {
   getAllProducts,
   addProduct,
-  getAProductById,
+  getProductById,
   updateProductById,
-  getProductsByCondition,
+  productFilter,
+  deleteProduct,
 };

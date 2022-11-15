@@ -3,12 +3,13 @@ const { Schema } = mongoose;
 
 const productSchema = new Schema(
   {
-    title: { type: String, required: true },
+    title: { type: String, required: true, unique: true },
     desc: { type: String, required: true },
     category: { type: String, requied: true },
     imageUrl: { type: String, required: true },
     price: { type: Number, required: true },
     rating: { type: Number, required: true, default: 0 },
+    slug: { type: String, required: true },
     promotion: { type: Number },
     status: { type: String },
   },

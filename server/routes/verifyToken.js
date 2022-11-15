@@ -17,19 +17,19 @@ const verifyToken = function (req, res, next) {
   }
 };
 
-const verifyTokenAndAthorization = function (req, res, next) {
-  verifyToken(req, res, function () {
-    if (req.user.id === req.params.userId) {
-      next();
-    } else {
-      res.status(403).json({ message: "You are not authorization!" });
-    }
-  });
-};
+// const verifyTokenAndAthorization = function (req, res, next) {
+//   verifyToken(req, res, function () {
+//     if (req.user.id === req.params.userId) {
+//       next();
+//     } else {
+//       res.status(403).json({ message: "You are not authorization!" });
+//     }
+//   });
+// };
 
 const verifyTokenAndAdmin = function (req, res, next) {
   verifyToken(req, res, function () {
-    if (req.user.id === req.params.userId && req.user.isAdmin) {
+    if (req.user.isAdmin) {
       next();
     } else {
       res.status(403).json({ message: "You are not authorization!" });
@@ -38,7 +38,7 @@ const verifyTokenAndAdmin = function (req, res, next) {
 };
 
 module.exports = {
-  verifyTokenAndAthorization,
+  // verifyTokenAndAthorization,
   verifyTokenAndAdmin,
   verifyToken,
 };

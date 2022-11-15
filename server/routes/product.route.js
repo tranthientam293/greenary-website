@@ -7,12 +7,15 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(ProductController.getAllProducts)
-  .post( ProductController.addProduct);
+  .get(ProductController.productFilter)
+  .post(verifyTokenAndAdmin, ProductController.addProduct)
+  .delete(verifyTokenAndAdmin, ProductController.deleteProduct);
+
+router.route("/all").get(ProductController.getAllProducts);
 
 router
   .route("/:productId")
-  .get(ProductController.getAProductById)
+  .get(ProductController.getProductById)
   .put(verifyTokenAndAdmin, ProductController.updateProductById);
 
 module.exports = router;

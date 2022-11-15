@@ -4,8 +4,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
+const CartController = require("../controllers/Cart.controller");
 
-router.post("/signup", async function (req, res) {
+const signUpHandler = async (req, res, next) => {
   try {
     if (await User.findOne({ username: req.body.username })) {
       return res.status(200).json("Username already exists");
@@ -19,13 +20,16 @@ router.post("/signup", async function (req, res) {
       password: bcrypt.hashSync(req.body.password, 10),
     });
 
-    res.status(201).json("Account is created");
+    if (newUser) {
+      req.user = { ...newUser._doc };
+      next();
+    }
   } catch (err) {
     res.json(err);
   }
-});
+};
 
-router.post("/login", async function (req, res) {
+const logInHandler = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
@@ -35,11 +39,11 @@ router.post("/login", async function (req, res) {
     const hashedPassword = bcrypt.compareSync(req.body.password, user.password);
 
     if (!hashedPassword) {
-      return res.status(401).json("Wrong password!" );
+      return res.status(401).json("Wrong password!");
     }
 
     const accessToken = jwt.sign(
-      { id: user._id, isAdmin: user.isAdmin },
+      { id: user._id, isAdmin: user.isAdmin, username: user.username },
       process.env.JWT_SEC
     );
     const { password, ...rest } = user._doc;
@@ -47,6 +51,10 @@ router.post("/login", async function (req, res) {
   } catch (err) {
     res.status(500).json({ err });
   }
-});
+};
+
+router.post("/signup", signUpHandler, CartController.createCart);
+
+router.get("/login", logInHandler);
 
 module.exports = router;

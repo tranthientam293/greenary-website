@@ -6,13 +6,13 @@ const OrderSchema = new Schema(
     userId: { type: String, required: true },
     products: [
       {
-        productId: { type: String },
-        quantity: { type: Number },
+        productId: { type: String, required: true },
+        quantity: { type: Number, required: true },
       },
     ],
-    address: { type: String },
-    totalPayment: { type: Number },
-    status: { type: String, default: "pending" },
+    address: { type: String, required: true },
+    totalPayment: { type: Number, required: true },
+    status: { type: String, required: true, default: "pending" },
   },
   { timestamps: true }
 );

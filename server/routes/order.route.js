@@ -1,12 +1,18 @@
 const express = require("express");
-const { verifyTokenAndAthorization } = require("./verifyToken");
+const { verifyToken, verifyTokenAndAdmin } = require("./verifyToken");
 const router = express.Router();
 
 const OrderController = require("../controllers/Order.controller");
 
 router
+  .route("/")
+  .get(verifyTokenAndAdmin, OrderController.getAllOrders)
+  .put(verifyTokenAndAdmin, OrderController.updateOrder);
+
+router
   .route("/:userId")
-  .get(verifyTokenAndAthorization, OrderController.getOrders)
-  .post(verifyTokenAndAthorization, OrderController.createOrder);
+  .get(verifyToken, OrderController.getOrders)
+  .post(verifyToken, OrderController.createOrder)
+  .put(verifyToken, OrderController.updateOrder);
 
 module.exports = router;

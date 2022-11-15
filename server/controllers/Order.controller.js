@@ -8,6 +8,16 @@ const getOrders = async (req, res) => {
     res.status(500).json(err);
   }
 };
+
+const getAllOrders = async (req, res) => {
+  try {
+    const orders = await Order.find({});
+    res.status(200).json(orders);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
 const createOrder = async (req, res) => {
   try {
     const respone = await Order.create({
@@ -23,4 +33,18 @@ const createOrder = async (req, res) => {
   }
 };
 
-module.exports = { getOrders, createOrder };
+const updateOrder = async (req, res) => {
+  try {
+    const order = await Order.findByIdAndUpdate(req.body.id, {
+      $set: {
+        status: req.body.status,
+      },
+    });
+
+    res.status(200).json({ message: "sucess", order });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+module.exports = { getOrders, createOrder, getAllOrders, updateOrder };
