@@ -47,7 +47,7 @@ const Card = ({
       }
     >
       <div className="relative mb-5">
-        <img src={imageUrl} alt="card image" className="block mx-auto" />
+        <img src={imageUrl} alt="card-image" className="block max-w-[240px] aspect-[1] mx-auto" />
       </div>
 
       <div className="px-2 text-gray-01">
